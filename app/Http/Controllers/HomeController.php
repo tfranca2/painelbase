@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Distribuidor;
+use App\User;
 use App\Helpers\Helper;
 use Illuminate\Http\Request;
 
@@ -26,10 +26,9 @@ class HomeController extends Controller
      */
     public function index(){
 
-        $totalDistribuidores = Distribuidor::All()->count();
-
+        $usuarios = User::All()->count();
         return view('home',[
-            'distribuidores' => $totalDistribuidores,
+            'usuarios' => $usuarios,
         ]);
 
     }
